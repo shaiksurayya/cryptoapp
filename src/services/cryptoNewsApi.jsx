@@ -1,23 +1,26 @@
-import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+// 🔑 TEMPORARY: hardcoded API key (replace with your own)
+const GNEWS_API_KEY = 'key-here-your-gnews-api-key';
 
-const cryptoNewsHeaders = {
-    'x-rapidapi-key': 'key-here',
-		'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com',
-}
+const baseUrl = 'https://gnews.io/api/v4';
 
-const baseUrl = 'https://bing-news-search1.p.rapidapi.com';
-
-const createRequest=(url)=>({url,headers:cryptoNewsHeaders})
-
-export const cryptoNewsApi=createApi({
-    reducerPath:'cryptoNewsApi',
-    baseQuery:fetchBaseQuery({baseUrl}),
-    endpoints:(builder)=>({
-        getCryptoNews:builder.query({
-            query:({ newsCategory , count})=>createRequest(`/news/search?q=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`),
-        })
-    })
-});    
+export const cryptoNewsApi = createApi({
+  reducerPath: 'cryptoNewsApi',
+  baseQuery: fetchBaseQuery({ baseUrl }),
+  endpoints: (builder) => ({
+    getCryptoNews: builder.query({
+      query: ({ newsCategory, count }) => ({
+        url: '/search',
+        params: {
+          q: newsCategory || 'cryptocurrency',
+          lang: 'en',
+          max: count || 20,
+          apikey: GNEWS_API_KEY,
+        },
+      }),
+    }),
+  }),
+});
 
 export const { useGetCryptoNewsQuery } = cryptoNewsApi;
