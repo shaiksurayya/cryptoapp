@@ -1,0 +1,404 @@
+:root {
+  --text-primary: #000;
+  --bgPrimary: #fff;
+  --bgSecondary: #f9f9f9;
+  --pink: #0071bd;
+  --light-blue: #e6f7ff;
+  --border: #d9d9d9;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:hover {
+  color: var(--pink) !important;
+}
+
+/* APP LAYOUT */
+.app {
+  display: flex;
+  overflow: hidden;
+}
+
+.navbar {
+  flex: 0.2;
+  background-color: rgb(0, 21, 41);
+}
+
+.main {
+  flex: 0.8;
+  width: 100%;
+}
+
+.routes {
+  padding: 20px;
+}
+
+.nav-container {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  background-color: rgb(0, 21, 41);
+}
+
+.logo-container {
+  background-color: #001529;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  margin-left: 15px;
+}
+
+.logo a {
+  color: white;
+}
+
+.menu-control-container {
+  display: none !important;
+  position: absolute !important;
+  right: 10px !important;
+  top: 25px !important;
+  font-size: 1.2rem !important;
+  background-color: var(--bgSecondary) !important;
+  border: none !important;
+}
+
+/* LOADER */
+.loader {
+  height: 81vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* RESPONSIVE NAV */
+@media screen and (max-width: 1300px) {
+  .main {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex: 1;
+  }
+
+  .main {
+    flex: 1;
+    margin-top: 90px;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .nav-container {
+    height: 8vh;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--bgSecondary);
+  }
+
+  .menu-control-container {
+    display: block !important;
+  }
+
+  .ant-menu {
+    position: absolute;
+    right: 0;
+  }
+
+  .home-title {
+    font-size: 1.4rem !important;
+  }
+
+  .show-more {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* COIN DETAILS */
+.coin-detail-container {
+  margin: 30px;
+}
+
+.coin-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  gap: 10px;
+}
+
+.coin-heading-container .coin-name {
+  font-weight: 900;
+  color: var(--pink);
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.stats-container h2 {
+  color: var(--pink);
+  margin-top: 20px;
+}
+
+.coin-stats {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+}
+
+.coin-stats:hover {
+  background-color: var(--bgSecondary);
+}
+
+.stats {
+  font-weight: 800;
+}
+
+/* NEWS */
+.select-news {
+  width: 180px;
+}
+
+.news-card {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-image-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.news-title {
+  width: 70%;
+  font-weight: 600;
+}
+
+.news-image-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.news-card p {
+  margin: 12px 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.news-provider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.provider-name {
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* MOBILE NEWS */
+@media screen and (max-width: 768px) {
+  .news-image-container {
+    flex-direction: column;
+  }
+
+  .news-title {
+    width: 100%;
+  }
+
+  .news-image-container img {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+/* HOME */
+.home-heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.show-more {
+  margin-top: 0 !important;
+}
+
+/* CRYPTO CARDS */
+.crypto-card-container {
+  min-height: 65vh !important;
+}
+
+.crypto-card {
+  min-width: 250px;
+}
+
+.crypto-card .crypto-image {
+  width: 35px;
+}
+
+/* SEARCH */
+.search-crypto {
+  margin: 20px auto 30px auto;
+  width: 250px;
+}
+
+/* CHART */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  color: var(--pink);
+}
+
+.chart-title {
+  color: var(--pink) !important;
+}
+
+.price-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.price-change,
+.current-price {
+  font-weight: 900 !important;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #001529;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+/* =========================
+   NEWS CARD FINAL ADJUSTMENT
+   ========================= */
+
+.news-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* Title + image row */
+.news-image-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* Title clamp (2 lines max) */
+.news-title {
+  width: 70%;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Image consistency */
+.news-image-container img {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Description clamp (3 lines) */
+.news-card p {
+  margin: 12px 0 16px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Provider row sticks to bottom */
+.news-provider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.provider-name {
+  margin-left: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Card hover polish */
+.news-card:hover {
+  transform: translateY(-4px);
+  transition: all 0.25s ease;
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  .news-image-container {
+    flex-direction: column;
+  }
+
+  .news-title {
+    width: 100%;
+  }
+
+  .news-image-container img {
+    width: 100%;
+    height: 180px;
+  }
+}
