@@ -402,3 +402,16 @@ a:hover {
     height: 180px;
   }
 }
+
+
+
+.menu-control-container{
+  display:none;
+  background:none;
+  border:none;
+  font-size:22px;
+  color:white;
+  cursor:pointer;
+}
+
+/* Mobile */

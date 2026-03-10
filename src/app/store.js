@@ -1,21 +1,29 @@
-// import {configureStore} from '@reduxjs/toolkit';
+// import { configureStore } from '@reduxjs/toolkit';
 
-// import { cryptoApi } from '../services/CryptoApi';
+// import { cryptoApi } from '../services/cryptoApi';
+// import { cryptoNewsApi } from '../services/cryptoNewsApi';
 
 // export default configureStore({
-//     reducer: {
-//         [cryptoApi.reducerPath]: cryptoApi.reducer,
-//     },
+//   reducer: {
+//     [cryptoApi.reducerPath]: cryptoApi.reducer,
+//     [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
+//   },
 // });
-import { configureStore } from "@reduxjs/toolkit";
-import { cryptoApi } from "../services/CryptoApi";
-import { cryptoNewsApi } from "../services/cryptoNewsApi";
 
-export default configureStore({
+import { configureStore } from '@reduxjs/toolkit';
+import { cryptoApi } from '../services/cryptoApi';
+import { cryptoNewsApi } from '../services/cryptoNewsApi';
+
+const store = configureStore({
   reducer: {
     [cryptoApi.reducerPath]: cryptoApi.reducer,
     [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
   },
+
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(cryptoApi.middleware).concat(cryptoNewsApi.middleware),
+    getDefaultMiddleware()
+      .concat(cryptoApi.middleware)
+      .concat(cryptoNewsApi.middleware),
 });
+
+export default store;
