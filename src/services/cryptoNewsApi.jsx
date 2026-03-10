@@ -1,20 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const GNEWS_API_KEY = process.env.REACT_APP_GNEWS_API_KEY;
-const baseUrl = '/api/news';
+const baseUrl = 'https://saurav.tech/NewsAPI';
+
 export const cryptoNewsApi = createApi({
   reducerPath: 'cryptoNewsApi',
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getCryptoNews: builder.query({
-      query: ({ newsCategory, count }) => ({
-        url: '/search',
-        params: {
-          q: newsCategory || 'cryptocurrency',
-          lang: 'en',
-          max: count || 20,
-          apikey: GNEWS_API_KEY,
-        },
+      query: () => ({
+        url: '/top-headlines/category/technology/us.json',
       }),
     }),
   }),
