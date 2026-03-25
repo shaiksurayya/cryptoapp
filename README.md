@@ -15,7 +15,8 @@ Cryptoverse is a cryptocurrency dashboard built with React that displays real-ti
 - Crypto APIs
 
 ## Live Website
-https://cryyptoverse.netlify.app
+https://cryptoapp-oe0czpack-shaiksurayyas-projects.vercel.app
+
 
 ## Screenshot
 ![Home Page](/screenshots/home.png)
